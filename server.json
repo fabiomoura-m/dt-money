@@ -55,6 +55,14 @@
       "type": "outcome",
       "createdAt": "2022-10-03T19:16:55.557Z",
       "id": 7
+    },
+    {
+      "description": "Pão de Queijo",
+      "category": "Alimentação",
+      "price": 5,
+      "type": "outcome",
+      "createdAt": "2022-10-05T21:23:30.084Z",
+      "id": 8
     }
   ]
 }

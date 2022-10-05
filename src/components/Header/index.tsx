@@ -2,11 +2,20 @@ import { HeaderContainer, HeaderContent, NewTransactionButton } from './style'
 import * as Dialog from '@radix-ui/react-dialog'
 import logoImage from '../../assets/logo.svg'
 import { NewTransactionModal } from '../NewTransactionModal'
-import { useContext } from 'react'
+
 import { TransactionsContext } from '../../contexts/TransactionsContext'
+import { useContextSelector } from 'use-context-selector'
 
 export function Header() {
-  const { open, setOpen } = useContext(TransactionsContext)
+  const { open, setOpen } = useContextSelector(
+    TransactionsContext,
+    (context) => {
+      return {
+        open: context.open,
+        setOpen: context.setOpen,
+      }
+    },
+  )
 
   return (
     <HeaderContainer>

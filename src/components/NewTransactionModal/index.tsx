@@ -3,6 +3,7 @@ import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
 import * as z from 'zod'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useContextSelector } from 'use-context-selector'
 
 import {
   CloseButton,
@@ -11,7 +12,6 @@ import {
   TransactionType,
   TransactionTypeButton,
 } from './style'
-import { useContext } from 'react'
 import { TransactionsContext } from '../../contexts/TransactionsContext'
 
 const newTransactionsFormSchema = z.object({
@@ -24,7 +24,15 @@ const newTransactionsFormSchema = z.object({
 type NewTransactionFormInputs = z.infer<typeof newTransactionsFormSchema>
 
 export function NewTransactionModal() {
-  const { createTransaction, setOpen } = useContext(TransactionsContext)
+  const { createTransaction, setOpen } = useContextSelector(
+    TransactionsContext,
+    (context) => {
+      return {
+        createTransaction: context.createTransaction,
+        setOpen: context.setOpen,
+      }
+    },
+  )
 
   const {
     register,
