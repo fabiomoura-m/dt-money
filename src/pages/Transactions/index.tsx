@@ -1,3 +1,4 @@
+import { CalendarBlank } from 'phosphor-react'
 import { useContextSelector } from 'use-context-selector'
 import { Header } from '../../components/Header'
 import { Summary } from '../../components/Summary'
@@ -36,6 +37,7 @@ export function Transactions() {
                   </td>
                   <td>{transaction.category}</td>
                   <td>
+                    <CalendarBlank size={24} />
                     {dateFormatter.format(new Date(transaction.createdAt))}
                   </td>
                 </tr>
