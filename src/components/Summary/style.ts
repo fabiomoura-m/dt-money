@@ -14,16 +14,6 @@ export const SummaryContainer = styled.div`
 
   @media (max-width: 880px) {
     overflow-x: auto;
-    &::-webkit-scrollbar {
-      background-color: #e0e0e0;
-      height: 0.75rem;
-      /* border-radius: 6px; */
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: #adadad;
-      border-radius: 6px;
-      border: 2px solid var(--colors-border-contents);
-    }
   }
 `
 
